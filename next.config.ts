@@ -15,7 +15,6 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['framer-motion'],
   },
   // Optimize for production performance
-  swcMinify: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },

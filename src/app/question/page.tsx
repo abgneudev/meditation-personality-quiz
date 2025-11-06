@@ -101,7 +101,7 @@ export default function Question() {
 
   const q = questions[current];
   const percent = Math.round(((current + 1) / questions.length) * 100);
-  const logoUrl = 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/sign/quiz-media/logo_no_back.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZTEwODBmZS01ZmI1LTRkYjAtOWYwMy1iNWVhYmUxN2E1NjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJxdWl6LW1lZGlhL2xvZ29fbm9fYmFjay5wbmciLCJpYXQiOjE3NjI0MjgxOTgsImV4cCI6MTc5Mzk2NDE5OH0.GQkqaVJqqzwKfL0eeoqmb0-doWMGXsbmA_tlsZ7Yev4';
+  const logoUrl = 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/logo_no_back.png';
 
   return (
     <div className={styles.wrap}>

@@ -8,22 +8,22 @@ import { supabase } from '../../../lib/supabase';
 const personalityData = {
   quiet: {
     name: 'The Quiet Observer',
-    image: 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/sign/quiz-media/quiet.PNG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZTEwODBmZS01ZmI1LTRkYjAtOWYwMy1iNWVhYmUxN2E1NjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJxdWl6LW1lZGlhL3F1aWV0LlBORyIsImlhdCI6MTc2MjQxNTIxMiwiZXhwIjoxNzkzOTUxMjEyfQ.gjXCzmRl0xtMVWCDFBNhfxxJCr01iwARXNd84esz7_A',
+    image: 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/quiet.PNG',
     description: 'You have a natural gift for turning inward and finding calm within yourself. When life feels overwhelming, your sensitivity to your inner world allows you to pause and reflect rather than react. This quiet strength is a sign of deep emotional awareness'
   },
   action: {
     name: 'The Action Driver',
-    image: 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/sign/quiz-media/action.PNG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZTEwODBmZS01ZmI1LTRkYjAtOWYwMy1iNWVhYmUxN2E1NjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJxdWl6LW1lZGlhL2FjdGlvbi5QTkciLCJpYXQiOjE3NjI0MTUxODYsImV4cCI6MTc5Mzk1MTE4Nn0.7S7F5FlocMlnV-teJRUiLzaO0Bcm0MqIvHUGpTX-7sw',
+    image: 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/action.PNG',
     description: 'You feel most at ease when you can move with purpose. Channeling stress into action is not just your coping style, it is a form of resilience. Your energy helps you stay grounded even when things feel tough.'
   },
   imagine: {
     name: 'The Imaginative Dreamer',
-    image: 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/sign/quiz-media/imagine.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZTEwODBmZS01ZmI1LTRkYjAtOWYwMy1iNWVhYmUxN2E1NjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJxdWl6LW1lZGlhL2ltYWdpbmUuSlBHIiwiaWF0IjoxNzYyNDE1MTk4LCJleHAiOjE3OTM5NTExOTh9.rjLt09acyo-cEiodKFt-e-3deTaOonRVJ2_cyp0o6VE',
+    image: 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/imagine.JPG',
     description: 'Your creativity is more than just a talent, it is a way of healing. By reframing experiences through imagination and artistry, you transform challenges into stories, images, and new perspectives. This is your quiet form of emotional resilience.'
   },
   social: {
     name: 'The Social Connector',
-    image: 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/sign/quiz-media/social.PNG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZTEwODBmZS01ZmI1LTRkYjAtOWYwMy1iNWVhYmUxN2E1NjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJxdWl6LW1lZGlhL3NvY2lhbC5QTkciLCJpYXQiOjE3NjI0MTUyMTksImV4cCI6MTc5Mzk1MTIxOX0.XJ4Yslz1MC7hg6sQVN4-YIHweP_vTTy2nIRN8L-7o_E',
+    image: 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/social.PNG',
     description: 'For you, well-being blossoms in connection. When life feels heavy, you lean on the strength of relationships, compassion, and shared understanding. This capacity for empathy makes you not only resilient yourself but also a source of comfort to others.'
   }
 };

@@ -7,7 +7,7 @@ export default function Home() {
     <main className={styles.container}>
       <div className={styles.topLogo}>
         <Image
-          src="https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/sign/quiz-media/logotype-08.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZTEwODBmZS01ZmI1LTRkYjAtOWYwMy1iNWVhYmUxN2E1NjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJxdWl6LW1lZGlhL2xvZ290eXBlLTA4LnBuZyIsImlhdCI6MTc2MjQyOTQ5MSwiZXhwIjoxNzkzOTY1NDkxfQ.8avYK0kagqMdnOXDushjWskA4HKf0o-tPMkz1XUYDJg"
+          src="https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/logotype-08.png"
           alt="Logo"
           width={220}
           height={48}
@@ -17,7 +17,7 @@ export default function Home() {
       <div className={styles.content}>
         <div className={styles.imageWrapper}>
           <Image
-            src="https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/sign/quiz-media/home.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZTEwODBmZS01ZmI1LTRkYjAtOWYwMy1iNWVhYmUxN2E1NjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJxdWl6LW1lZGlhL2hvbWUucG5nIiwiaWF0IjoxNzYyNDEwNzk0LCJleHAiOjE3OTM5NDY3OTR9.560e3GpiBSpJN2XahwCfhlYl_8WKqPRbH7oEHAdZQWs"
+            src="https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/home.png"
             alt="Meditation illustration"
             width={200}
             height={200}

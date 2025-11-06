@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans, IBM_Plex_Mono } from "next/font/google";
+import { LoadingWrapper } from "./LoadingWrapper";
 import "./globals.css";
 
 const openSans = Open_Sans({
@@ -26,8 +27,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          href="https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/logo_no_back.png"
+          as="image"
+          type="image/png"
+        />
+        <link
+          rel="preload"
+          href="https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/home.png"
+          as="image"
+          type="image/png"
+        />
+      </head>
       <body className={`${openSans.variable} ${ibmPlexMono.variable}`}>
-        {children}
+        <LoadingWrapper>{children}</LoadingWrapper>
       </body>
     </html>
   );

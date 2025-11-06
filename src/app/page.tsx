@@ -1,6 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import styles from './page.module.css';
+
+export const metadata: Metadata = {
+  title: 'Meditation Personality Quiz',
+  description: 'Discover your meditation personality in just 8 questions',
+  icons: {
+    icon: 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/logo_no_back.png',
+  },
+};
 
 export default function Home() {
   return (

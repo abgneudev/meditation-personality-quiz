@@ -31,7 +31,10 @@ export default function Question() {
   const [selections, setSelections] = useState<string[]>([]);
   const [personalities, setPersonalities] = useState<number[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [logoLoaded, setLogoLoaded] = useState(false);
   const router = useRouter();
+
+  const logoUrl = 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/logo_no_back.png';
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -57,6 +60,11 @@ export default function Question() {
     };
 
     fetchQuestions();
+
+    // Preload logo image
+    const img = new window.Image();
+    img.src = logoUrl;
+    img.onload = () => setLogoLoaded(true);
   }, []);
 
   const selectOption = (index: number, letter: string) => {
@@ -101,7 +109,6 @@ export default function Question() {
 
   const q = questions[current];
   const percent = Math.round(((current + 1) / questions.length) * 100);
-  const logoUrl = 'https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/public/quiz-media/logo_no_back.png';
 
   return (
     <div className={styles.wrap}>
@@ -124,12 +131,28 @@ export default function Question() {
           key={current} 
           initial={isLoaded ? { opacity: 0, x: 40 } : { opacity: 1, x: 0 }}
           animate={{ opacity: 1, x: 0 }} 
-          transition={{ duration: 0.45, ease: "easeOut" }}
+          exit={{ opacity: 0, x: -40 }}
+          transition={{ 
+            duration: 0.45, 
+            ease: "easeOut",
+            opacity: { duration: 0.3 },
+            x: { duration: 0.45 }
+          }}
           layout
         >
           <div className={styles.dialogRow}>
             <div className={styles.logoWrap}>
-              <Image src={logoUrl} alt="logo" className={styles.logo} width={56} height={56} priority />
+              <Image 
+                src={logoUrl} 
+                alt="logo" 
+                className={`${styles.logo} ${!logoLoaded ? styles.loading : ''}`} 
+                width={56} 
+                height={56} 
+                priority
+                onLoad={() => setLogoLoaded(true)}
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+              />
             </div>
             <div className={styles.bubble}>
               {q.question_text}

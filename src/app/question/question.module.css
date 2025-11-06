@@ -294,6 +294,17 @@
   height: 56px;
   object-fit: contain;
   border-radius: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.logo.loading {
+  opacity: 0.5;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
 }
 .bubble {
   position: relative;

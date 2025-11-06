@@ -1,0 +1,322 @@
+/* Dialog-style quiz styles (purple-focused) */
+:root {
+  --accent-purple: #5b4bff;
+  --accent-purple-600: #4936e6;
+  --accent-purple-800: #3426b3;
+  --accent-purple-50: rgba(91, 75, 255, 0.12);
+  --muted: #f3f4f6;
+  --card-bg: linear-gradient(180deg, #ffffff, #fbfbfc);
+  --text: #111827;
+  --option-border: #e6e6e9;
+  --bubble-bg: #f6f3ff; /* pale lavender */
+  --bubble-border: #e6deff;
+  --bubble-bottom: #c9b8ff;
+}
+
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(180deg, #fafafa, #f3f5f6);
+  padding: 0;
+}
+
+.card {
+  width: 100%;
+  height: 100vh;
+  max-width: none;
+  background: var(--card-bg);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 36px 28px 120px 28px;
+  position: relative;
+  overflow: auto;
+}
+
+.card::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-purple-600));
+  z-index: 20;
+}
+
+.progressWrap {
+  margin-bottom: 12px;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.progressBar {
+  height: 8px;
+  background: var(--muted);
+  border-radius: 999px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.progressFill {
+  height: 8px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-purple-600));
+  width: 0%;
+  transition: width .35s ease;
+}
+
+.counter {
+  color: rgba(0, 0, 0, 0.45);
+  text-align: right;
+}
+
+.backBtn {
+  background: transparent;
+  border: none;
+  color: #000; /* black back arrow */
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 8px;
+  z-index: 30;
+}
+
+.backBtn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.questionRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.qNumber {
+  color: var(--accent-purple);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.questionText {
+  flex: 1;
+  text-align: left;
+  font-size: 22px;
+  color: var(--text);
+  line-height: 1.35;
+  display: block;
+}
+
+.requiredStar {
+  color: #d9534f;
+  font-weight: 800;
+  margin-left: 6px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.requiredLabel {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+  margin-top: 6px;
+  text-align: left;
+  font-style: italic;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.optionBtn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--option-border);
+  background: #ffffff; /* white background for options */
+  cursor: pointer;
+  transition: all .18s ease;
+  text-align: left;
+  font-size: 16px;
+  color: #777777; /* use #777777 grey for unselected option text */
+  position: relative;
+}
+
+.optionBtn:hover {
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+  transform: translateY(-2px);
+}
+
+.letter {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--option-border);
+  background: white;
+  color: #777777; /* letter uses same grey */
+  font-weight: 700;
+}
+
+.selected {
+  background: var(--accent-purple-50);
+  border-color: var(--accent-purple);
+  box-shadow: 0 12px 30px rgba(91, 75, 255, 0.14);
+  color: var(--text); /* selected option text becomes dark for contrast */
+}
+
+.selected .letter {
+  color: var(--accent-purple); /* keep letter accented when selected */
+}
+
+.checkIcon {
+  position: absolute;
+  right: 16px;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-purple);
+  font-size: 20px;
+}
+
+.backBtn i,
+.okBtn i {
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.okRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.continueBtn {
+  width: 100%;
+  max-width: 560px;
+  background: var(--accent-purple);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 18px 36px rgba(75, 59, 255, 0.18);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.continueBtn.disabled,
+.continueBtn[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: none;
+}
+
+.navRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  gap: 12px;
+}
+
+.navBtn {
+  background: #f3f4f6;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.navBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@media (max-width: 720px) {
+  .card {
+    padding: 20px;
+  }
+
+  .questionText {
+    font-size: 18px;
+  }
+
+  .logo {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Desktop: make Continue button smaller and left-aligned for a web view layout */
+@media (min-width: 768px) {
+  .okRow {
+    justify-content: flex-start;
+  }
+
+  .continueBtn {
+    width: auto;
+    max-width: 280px;
+    padding: 12px 20px;
+  }
+}
+
+/* dialog bubble + logo */
+.dialogRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.logoWrap {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+.bubble {
+  position: relative;
+  background: var(--bubble-bg);
+  border: 2px solid var(--bubble-border);
+  padding: 14px 18px;
+  border-radius: 18px;
+  border-top-left-radius: 0; /* remove radius on top-left to match chat style */
+  color: #1f114f; /* dark purple text */
+  font-weight: 800;
+  box-shadow: 0 10px 28px rgba(45, 33, 120, 0.08);
+  max-width: calc(100% - 96px);
+  font-size: 18px;
+  line-height: 1.2;
+}
+/* no tail for this bubble — top-left corner intentionally squared */
+
+/* add a subtle text shadow like in the Sass example to lift text */
+.bubble {
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* simulate a bottom drop (border-bottom) for extra depth */
+.bubble {
+  border-bottom: 6px solid var(--bubble-bottom);
+}
+

@@ -1,66 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <main className={styles.container}>
+      <div className={styles.topLogo}>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/sign/quiz-media/logotype-08.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZTEwODBmZS01ZmI1LTRkYjAtOWYwMy1iNWVhYmUxN2E1NjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJxdWl6LW1lZGlhL2xvZ290eXBlLTA4LnBuZyIsImlhdCI6MTc2MjQyOTQ5MSwiZXhwIjoxNzkzOTY1NDkxfQ.8avYK0kagqMdnOXDushjWskA4HKf0o-tPMkz1XUYDJg"
+          alt="Logo"
+          width={220}
+          height={48}
           priority
         />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+      </div>
+      <div className={styles.content}>
+        <div className={styles.imageWrapper}>
+          <Image
+            src="https://trritavoaewykjuyzjty.supabase.co/storage/v1/object/sign/quiz-media/home.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZTEwODBmZS01ZmI1LTRkYjAtOWYwMy1iNWVhYmUxN2E1NjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJxdWl6LW1lZGlhL2hvbWUucG5nIiwiaWF0IjoxNzYyNDEwNzk0LCJleHAiOjE3OTM5NDY3OTR9.560e3GpiBSpJN2XahwCfhlYl_8WKqPRbH7oEHAdZQWs"
+            alt="Meditation illustration"
+            width={200}
+            height={200}
+            priority
+            className={styles.heroImage}
+          />
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        
+        <h1 className={styles.heading}>How do you find your calm?</h1>
+        
+        <p className={styles.subheading}>
+          Discovering your meditation personality in just 8 friendly questions.
+        </p>
+        
+        <div className={styles.duration}>
+          <svg 
+            className={styles.timeIcon}
+            width="20" 
+            height="20" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2"
+            aria-hidden="true"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span className={styles.durationText}>takes 1 minute</span>
         </div>
-      </main>
-    </div>
+        
+        <Link href="/question" className={styles.ctaButton}>
+          Start Quiz
+        </Link>
+      </div>
+    </main>
   );
 }

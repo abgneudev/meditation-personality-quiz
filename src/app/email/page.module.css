@@ -1,0 +1,154 @@
+/* Full-viewport layout (no card) */
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start; /* use viewport top alignment */
+  justify-content: center; /* center horizontally */
+  background: linear-gradient(180deg, #faf9fb, #f4f6f7);
+  padding: 0; /* full-bleed viewport */
+}
+
+/* remove boxed card visual; use a full-bleed container instead */
+.card {
+  width: 100%;
+  height: 100vh; /* fill viewport */
+  max-width: none;
+  background: linear-gradient(180deg, #ffffff, #fbf6f8);
+  border-radius: 0; /* remove card corners */
+  box-shadow: none; /* remove card shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56px 72px 72px 72px; /* inset content on desktop like question page */
+  position: relative;
+  overflow: auto;
+}
+
+/* progress styles removed for email-only page */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.questionRow {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.qNumber {
+  color: #b26a97;
+  font-weight: 600;
+  min-width: 36px;
+  font-size: 18px;
+}
+
+.questionText {
+  color: #33313a;
+  font-size: 22px;
+  line-height: 1.45;
+  max-width: 820px;
+}
+
+.inputWrap {
+  margin-top: 12px;
+  width: 100%;
+  max-width: 820px;
+}
+
+.requiredStar {
+  color: #d9534f;
+  font-weight: 800;
+  margin-left: 6px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.requiredLabel {
+  color: rgba(0,0,0,0.45);
+  font-size: 12px;
+  margin-top: 6px;
+  text-align: left;
+  font-style: italic;
+}
+
+.requiredStarInput{
+  color: #d9534f;
+  font-weight: 800;
+  margin-left: 8px;
+  font-size: 18px;
+  vertical-align: middle;
+  position: relative;
+  top: -6px;
+}
+
+.emailInput {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid rgba(200,160,190,0.35);
+  padding: 12px 10px;
+  font-size: 18px; /* more reasonable size */
+  color: #3b2d34; /* darker for readability */
+  background: transparent;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.emailInput::placeholder {
+  color: #d9c5d1;
+}
+
+.invalid {
+  border-bottom-color: #d9534f !important;
+  box-shadow: 0 2px 0 rgba(217,83,79,0.06);
+  color: #a12a2a;
+}
+
+.errorText{
+  color:#d9534f;
+  font-size:13px;
+  margin-top:8px;
+  margin-left:2px;
+}
+
+.controls {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: flex-start;
+}
+
+.okBtn {
+  background: linear-gradient(180deg,#f06ea3,#d65f97);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 22px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(214,96,150,0.16);
+  cursor: pointer;
+}
+
+.hint {
+  color: #777;
+  font-size: 13px;
+}
+
+/* footer pill removed — no styles needed */
+
+@media (max-width: 720px) {
+  .card {
+    padding: 28px;
+  }
+  .questionText {
+    font-size: 20px;
+  }
+  .emailInput {
+    font-size: 16px;
+  }
+}

@@ -1,3 +1,241 @@
+/* 12-column grid layout system */
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.2rem;
+  align-items: center;
+  /* add extra top padding so centered content doesn't overlap the top logo */
+  padding: 2rem;
+  padding-top: calc(2rem + 72px);
+  background: #ffffff;
+  overflow: hidden;
+  position: relative; /* allow absolutely positioned top logo */
+}
+
+/* Center content within the grid */
+.content {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Image styling */
+.imageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+/* Top centered logo on home page */
+.topLogo {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* avoid intercepting clicks */
+}
+
+.topLogo img,
+.topLogo :global(img) {
+  display: block;
+  max-width: 260px;
+  width: auto;
+  height: auto;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+  object-fit: contain;
+}
+
+/* Typography - semantic HTML elements */
+.heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.subheading {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  color: #666666;
+  margin: 0;
+}
+
+/* Duration indicator with icon */
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #888888;
+  margin: 0.5rem 0;
+}
+
+.durationText {
+  font-style: italic;
+  font-size: small;
+}
+
+.timeIcon {
+  flex-shrink: 0;
+}
+
+/* CTA Button */
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #10b981;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.ctaButton:hover {
+  background: #059669;
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+  transform: translateY(-2px);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+/* Tablet devices */
+@media (min-width: 768px) {
+  .content {
+    grid-column: 2 / 12;
+    gap: 1.5rem;
+  }
+  
+  .heading {
+    font-size:1.2rem;
+  }
+  
+  .subheading {
+    font-size: 0.8rem;
+  }
+  
+  .heroImage {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* increase top spacing on desktop so logo has comfortable breathing room */
+  .container {
+    padding-top: calc(2.5rem + 86px);
+  }
+}
+
+@media (max-width: 640px) {
+  /* mobile: reduce top padding since the logo is smaller */
+  .container {
+    padding-top: calc(1.5rem + 56px);
+  }
+  .topLogo {
+    top: 10px;
+  }
+}
+
+/* Desktop devices */
+@media (min-width: 1024px) {
+  .content {
+    grid-column: 3 / 11;
+    gap: 1rem;
+  }
+  
+  .heading {
+    font-size: 1.2rem;
+  }
+  
+  .heroImage {
+    max-width: 320px;
+  }
+}
+
+/* Large desktop devices */
+@media (min-width: 1440px) {
+  .content {
+    grid-column: 4 / 10;
+  }
+  
+  .heading {
+    font-size: 1.6rem;
+  }
+  
+  .heroImage {
+    max-width: 340px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .container {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .content {
+    gap: 1.5rem;
+  }
+  
+  .heading {
+    font-size: 1.6rem;
+  }
+  
+  .subheading {
+    font-size: 1rem;
+  }
+  
+  .heroImage {
+    max-width: 300px;
+  }
+  
+  .ctaButton {
+    padding: 0.875rem 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+  
+  .subheading {
+    font-size: 1rem;
+  }
+  
+  .heroImage {
+    max-width: 250px;
+  }
+}
+
 .page {
   --background: #fafafa;
   --foreground: #fff;

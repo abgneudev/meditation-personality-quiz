@@ -134,6 +134,7 @@
   flex-direction: column;
   gap: 12px;
   margin-top: 40px;
+  will-change: transform;
 }
 
 .optionBtn {

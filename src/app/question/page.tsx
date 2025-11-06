@@ -30,6 +30,7 @@ export default function Question() {
   const [current, setCurrent] = useState(0);
   const [selections, setSelections] = useState<string[]>([]);
   const [personalities, setPersonalities] = useState<number[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -51,6 +52,7 @@ export default function Question() {
         setQuestions(qs);
         setSelections(new Array(qs.length).fill(''));
         setPersonalities(new Array(qs.length).fill(0));
+        setIsLoaded(true);
       }
     };
 
@@ -118,7 +120,13 @@ export default function Question() {
           <div className={styles.counter}>{current + 1} of {questions.length}</div>
         </div>
 
-        <motion.div key={current} initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.45 }}>
+        <motion.div 
+          key={current} 
+          initial={isLoaded ? { opacity: 0, x: 40 } : { opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }} 
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          layout
+        >
           <div className={styles.dialogRow}>
             <div className={styles.logoWrap}>
               <Image src={logoUrl} alt="logo" className={styles.logo} width={56} height={56} priority />
